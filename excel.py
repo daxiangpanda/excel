@@ -10,12 +10,12 @@ nrows2 = table2.nrows
 ncols2 = table2.ncols
 
 for i in range(1,nrows1):
-    if table1.cell(i,1).value == u'人工':
+    if table1.cell(i,1).value == u'材料':
         row_begin = i
         break
 
 for i in range(row_begin,nrows1):
-    if table1.cell(i,1).value == u'其他':
+    if table1.cell(i,1).value == u'人工':
         row_end = i
         break
 row_end-=1
@@ -51,5 +51,9 @@ for i in table1_dict:
                 print i,'数值正确'
                 name_list.remove(i)
                 break
+
+print
+print
+print '未参与对比的项目'
 for i in  name_list:
     print i
