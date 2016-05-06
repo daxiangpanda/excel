@@ -39,8 +39,12 @@ for i in table1_dict:
         if table2.cell(j,3).value==i:
             print table1_dict[i]
             print table2.cell(j,8).value
-            if table2.cell(j,8).value!=table1_dict[i]:
+            if table2.cell(j,8).value == '' or table1_dict[i]=='':
+                print i,'空值'
+                continue
+            if table2.cell(j,8).value-table1_dict[i]>0.001:
                 print i,'数值不对'
+                print table2.cell(j,8).value-table1_dict[i],'差值'
                 name_list.remove(i)
                 break
             else:
