@@ -12,15 +12,11 @@ ncols2 = table2.ncols
 for i in range(1,nrows1):
     if table1.cell(i,1).value == u'人工':
         row_begin = i
-        print row_begin
-        print table1.cell(row_begin,1).value
         break
 
 for i in range(row_begin,nrows1):
     if table1.cell(i,1).value == u'其他':
         row_end = i
-        print row_end
-        print table1.cell(row_end,1).value
         break
 row_end-=1
 table1_dict = {}
@@ -50,4 +46,6 @@ for i in table1_dict:
             else:
                 print i,'数值正确'
                 name_list.remove(i)
-print len(name_list)
+                break
+for i in  name_list:
+    print i
